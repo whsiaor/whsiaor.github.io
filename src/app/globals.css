@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav {
+    @apply pb-4
+      border-b border-gray-200
+      justify-between 
+      flex items-center gap-5 
+      my-5 mx-auto 
+      max-w-5xl;
+  }
+nav ul{
+    @apply flex;
+}
+nav ul li{
+    @apply px-5 text-xl
+}
+nav a:hover{
+    @apply font-black
+}
