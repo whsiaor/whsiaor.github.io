@@ -1,7 +1,7 @@
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
-
+import "../../public/styles/prism.css"
 import "./globals.css";
 import Navbar from "./_components/navbar";
 

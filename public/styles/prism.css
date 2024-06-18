@@ -1,28 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-nav {
-  @apply pb-4
-      border-b border-gray-200
-      justify-between 
-      flex items-center gap-5 
-      my-5 mx-auto 
-      max-w-5xl;
-}
-nav ul {
-  @apply flex;
-}
-nav ul li {
-  @apply px-5 text-xl;
-}
-nav a:hover {
-  @apply font-black underline underline-offset-4;
-}
-
-
 /* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+python+jsx+tsx+typescript 
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+python+jsx+tsx+typescript */
 code[class*="language-"],
 pre[class*="language-"] {
   color: #f8f8f2;
@@ -58,6 +35,13 @@ pre[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;
+
+}
+:not(pre) > code{
+  background: #f4f3f3;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+  font-family: Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 .token.cdata,
 .token.comment,
@@ -66,7 +50,7 @@ pre[class*="language-"] {
   color: #8292a2;
 }
 .token.punctuation {
-  color: #f8f8f2;
+  color: #e0e08e;
 }
 .token.namespace {
   opacity: 0.7;
@@ -102,13 +86,13 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.class-name,
 .token.function {
-  color: #dc1a88;
+  color: #ee1c77;
 }
 .token.keyword {
   color: #66d9ef;
 }
-.token.keyword.module{
-  color: #ed5407;
+.token.keyword.module {
+  color: #fd971f;
 }
 .token.important,
 .token.regex {
@@ -124,4 +108,3 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
-*/

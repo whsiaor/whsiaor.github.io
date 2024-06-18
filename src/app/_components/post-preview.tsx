@@ -3,19 +3,15 @@ import DateFormatter from "./date-formatter";
 
 type Props = {
   title: string;
-  // coverImage: string;
   date: string;
   excerpt: string;
-  // author: Author;
   slug: string;
 };
 
 export function PostPreview({
   title,
-  // coverImage,
   date,
   excerpt,
-  // author,
   slug,
 }: Props) {
   return (
