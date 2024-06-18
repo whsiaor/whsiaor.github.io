@@ -7,7 +7,7 @@ export function Intro() {
         Coding.
       </h1>
       <h4 className=" text-lg mt-3 px-3 md:pl-8 ">
-        - A blog of programming learning notes.{" "}
+        - Notes from my programming journey.{" "}
       </h4>
     </section>
   );

@@ -23,17 +23,21 @@
 .markdown strong {
   @apply font-extrabold;
 }
-
+/* 
 .markdown code{
   @apply  p-2 
 
 }
 .markdown pre code {
   @apply p-1 block overflow-y-scroll;
+} */
+.markdown ul{
+  @apply pl-8;
 }
-
 .markdown li{
   @apply list-disc 
 }
-
+.markdown a{
+  @apply text-orange-500
+}
 

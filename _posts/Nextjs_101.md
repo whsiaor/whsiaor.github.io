@@ -1,6 +1,6 @@
 ---
 title: "Next.js 101"
-excerpt: "This is some notes I made when I started learning to use Next.js, including how to set it up, basic usage, and how to build a website locally."
+excerpt: "This is some note I made when I was starting to learn how to use Next.js, including how to set it up, basic usage, and how to build a website locally."
 date: "2024-06-15"
 ---
 
@@ -42,7 +42,7 @@ const res = await fetch("http://localhost:4000/tickets", {
 
 ### Dynamic Routing
 To create a dynamic route, add a folder under the `app` directory named `[PARAM]` and create a `page` file within it for template.
-
+![img](/posts/Nextjs_101/1.png)
 
 ### Static Parameters
 
@@ -120,3 +120,10 @@ After building, run the following:
 ```bash
 npx serve ./dist # ./out if you choose default setting at beginning
 ```
+
+## Q&A
+### img doesn't need full path
+
+- Wrong one: `public/posts/img.jpg`
+
+- Correct: `posts/img.jpg`

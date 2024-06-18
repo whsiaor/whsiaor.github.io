@@ -38,9 +38,9 @@ pre[class*="language-"] {
 
 }
 :not(pre) > code{
-  background: #f4f3f3;
-  border-radius: 0.3em;
-  font-size: 0.8em;
+  background: #dfdfdf;
+  border-radius: 0.2em;
+  font-size: 0.9em;
   font-family: Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 .token.cdata,
