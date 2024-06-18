@@ -1,4 +1,3 @@
-import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
@@ -23,7 +22,6 @@ export default function RootLayout({
       <body className={cormorant.className}>
         <Navbar />
         <div className="min-h-screen">{children}</div>
-        <Footer />
       </body>
     </html>
   );

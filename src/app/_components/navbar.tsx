@@ -8,13 +8,19 @@ export default function Navbar() {
       </div>
       <ul>
         <li>
-          <Link href="/">Blog</Link>
+          <Link href="/" className="hover:text-pink-600">
+            Blog
+          </Link>
         </li>
         <li>
-          <Link href="/portfolio">Portfolio</Link>
+          <Link href="/portfolio" className="hover:text-sky-500">
+            Portfolio
+          </Link>
         </li>
         <li>
-          <Link href="/gallery">Gallery</Link>
+          <Link href="/gallery" className="hover:text-lime-400">
+            Gallery
+          </Link>
         </li>
       </ul>
     </nav>

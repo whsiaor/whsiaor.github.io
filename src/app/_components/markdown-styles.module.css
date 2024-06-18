@@ -1,18 +1,36 @@
+
 .markdown {
-  @apply text-lg leading-relaxed;
+
+  @apply leading-relaxed font-sans font-light;
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  @apply my-6 tracking-wide text-lg;
+  
 }
-
+.markdown h1{
+  @apply text-4xl
+}
 .markdown h2 {
   @apply text-3xl mt-12 mb-4 leading-snug;
 }
-
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+.markdown strong {
+  @apply font-extrabold;
+}
+
+.markdown code{
+  @apply bg-gray-100 p-2 
+
+}
+.markdown pre code {
+  @apply p-1 block bg-gray-100 overflow-y-scroll;
+}
+
+
+
