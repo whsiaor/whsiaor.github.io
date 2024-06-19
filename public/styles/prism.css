@@ -38,10 +38,16 @@ pre[class*="language-"] {
 
 }
 :not(pre) > code{
-  background: #dfdfdf;
-  border-radius: 0.2em;
-  font-size: 0.9em;
-  font-family: Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  position: relative;
+    border-radius: 0.25rem; /* Adjust as needed */
+    background-color: #f5f5f5; /* Adjust as needed */
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    font-family: monospace;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 600;
 }
 .token.cdata,
 .token.comment,

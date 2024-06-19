@@ -1,24 +1,25 @@
-
 .markdown {
-
   @apply leading-relaxed font-sans font-light;
 }
 
-.markdown p,
-.markdown ul,
-.markdown ol,
-.markdown blockquote {
-  @apply my-6 tracking-wide text-lg;
-  
+.markdown p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
 }
-.markdown h1{
-  @apply text-4xl font-semibold
+
+.markdown ol {
+  @apply my-6 tracking-wide text-lg;
+}
+.markdown h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
 }
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 font-semibold leading-snug;
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
 }
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 font-semibold leading-snug;
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+.markdown h4 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight;
 }
 .markdown strong {
   @apply font-extrabold;
@@ -31,13 +32,18 @@
 .markdown pre code {
   @apply p-1 block overflow-y-scroll;
 } */
-.markdown ul{
-  @apply pl-8;
+.markdown ul {
+  @apply my-6 ml-6 list-disc [&>li]:mt-2;
 }
-.markdown li{
-  @apply list-disc 
+.markdown li {
+  @apply list-disc;
 }
-.markdown a{
-  @apply text-orange-500
+.markdown a {
+  @apply text-orange-500;
 }
-
+.markdown a:hover {
+  @apply text-orange-500 underline font-bold;
+}
+.markdown blockquote {
+  @apply mt-6 border-l-2 pl-6 italic;
+}

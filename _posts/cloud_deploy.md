@@ -4,23 +4,27 @@ excerpt: "This article details the processes for setting up AWS services, upload
 date: "2024-06-16"
 
 ---
-## AWS
+# AWS S3 & EC2
+ <br><br>
 
-- **Create an AWS Account**
+## 1. Create an AWS Account
 - **Create an IAM User**
 - **Assign Permissions to the IAM User**
 - **IAM Group:**  Allows assigning permissions in bulk
-- **IAM Policy:** Allows assigning permissions in bulk
+- **IAM Policy:**
+>`AdministratorAccess` for administrative privileges
 
-    - `AdministratorAccess` for administrative privileges
-    - `AmazonS3FullAccess` for accessing files
-    - Obtain the `secret access key` (this might not be where you get the key)
+>`AmazonS3FullAccess` for accessing files
 
-## Uploading Files to S3
+>btain the `secret access key` (this might not be where you get the key)  
+  
+<br><br>
+
+## 2. Uploading Files to S3
 
 - **Create S3**
 - **Create a Bucket**
-- **Bucket Policy**
+- **Edit Bucket Policy**
 	```json
     //.json
 	{
@@ -46,15 +50,16 @@ date: "2024-06-16"
 		]
 	}
 	```
+<br><br>
 
-## Hosting the Server on EC2 (PaaS)
+## 3. Hosting the Server on EC2 (PaaS)
 
 - **Create an EC2 Instance**
 	- Log in to the AWS Management Console.
 	- Navigate to the EC2 console and launch a new instance.
 	- Choose an appropriate AMI (e.g., Amazon Linux 2 or Ubuntu).
 	- Select an instance type (e.g., t2.micro for testing purposes).
-	- Configure the security group to open necessary ports (e.g., 80 and 443 for HTTP and HTTPS, and 22 for SSH).
+	- Configure the security group to open necessary   ports (e.g., 80 and 443 for HTTP and HTTPS, and 22 for SSH).
 
 - **Key Pairs**
 	- Download the `yourkey.pem` file.
@@ -63,7 +68,7 @@ date: "2024-06-16"
 	- Click `Connect` 
     - Select `SSH client`
     ```bash
-    ssh -i "SeaniM.pem" ec2-user@ec2-54-79-35-135.ap-southeast-2.compute.amazonaws.com
+    ssh -i "KEY.pem" ec2-user@your-ec2-instance-public-dns.ap-southeast-2.compute.amazonaws.com
     ```
 
 - **Configure Permissions (Security Group)**
@@ -95,13 +100,13 @@ scp -i /path/to/your-key-pair.pem -r /path/to/your/project ec2-user@your-ec2-ins
 - **Apply for SSL with Certbot**
 	- 90-day expiration: Can set up automated certificate renewal
 
-## CI/CD
+## 4. CI/CD
 
 - Create a **Dockerfile** locally
 - Push files to GitHub
 - Create **GitHub Actions**: Configure SSH and GPG keys in the settings
 
->> -This is just a brief overview of CI/CD. I'll write another post with detailed information.
+>This is just a brief overview of CI/CD. I'll write another post with detailed information.
 
 
 
