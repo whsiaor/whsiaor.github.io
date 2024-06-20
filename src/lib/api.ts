@@ -2,6 +2,7 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import path from "path";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -25,4 +26,11 @@ export function getAllPosts(): Post[] {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
+}
+
+export function getImgNames() {
+  const imgPath = path.join(process.cwd(), "public", "gallery");
+  const filenames = fs.readdirSync(imgPath);
+  const imgFiles = filenames.filter((file) => file.endsWith(".jpg"));
+  return imgFiles;
 }
