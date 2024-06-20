@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+*{
+  outline: rgb(152, 234, 127) 1px solid
+} */
 
 nav {
   @apply pb-4

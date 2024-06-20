@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <main>
       <Container>
-        <Intro />
+        <Intro title="Coding." subtitle="- Notes from my programming journey."/>
         {allPosts.length > 0 && <MoreStories posts={allPosts} />}
       </Container>
     </main>
