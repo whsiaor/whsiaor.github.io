@@ -24,7 +24,7 @@ export default function ImgCards() {
             height={0}
             placeholder="blur"
             blurDataURL={rgbDataURL(123, 123, 123)}
-            className="rounded-xl border group-hover:opacity-75"
+            className="rounded-xl  group-hover:opacity-75 shadow group-hover:shadow-lg"
           />
         </div>
       ))}

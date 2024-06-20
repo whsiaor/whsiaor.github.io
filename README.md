@@ -33,3 +33,7 @@ I began researching and found that Next.js, a framework based on React.js, offer
 
 - Gained knowledge and experience with **Next.js**, **TypeScript**, and **Tailwind.**
 - Used **Git branch** for developing the syntax highlight feature and then merged it back into the main branch, which was particularly convenient.
+
+###
+- new gallry page build 
+- shadcn, viewport,  Masonry 
