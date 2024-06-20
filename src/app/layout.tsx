@@ -4,6 +4,7 @@ import { Cormorant } from "next/font/google";
 import "../../public/styles/prism.css"
 import "./globals.css";
 import Navbar from "./_components/navbar";
+import type { Viewport } from 'next';
 
 const cormorant = Cormorant({ subsets: ["latin"] });
 
@@ -26,3 +27,11 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: false,
+};
