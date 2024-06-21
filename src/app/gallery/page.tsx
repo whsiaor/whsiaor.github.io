@@ -18,7 +18,7 @@ export default function GalleryPage() {
         <Intro title="Graphics." subtitle="- A Collection of My Graphic Design Work"/>
         <div className="px-2 md:px-20">
         <h2 className=" text-right border-b-2 w-100 mb-7 text-3xl md:text-5xl font-thin tracking-tighter leading-tight ">
-          All Showcasing
+          All Showcase
         </h2></div>
         <ImgCards />
       </Container>

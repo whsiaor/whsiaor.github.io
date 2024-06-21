@@ -9,7 +9,7 @@ const imgFiles = getImgNames()
 const imagesWithBlur = await addBlurredImgUrls(imgFiles.map(img => ({ src: img })));
 
   return (
-    <div className="columns-1 sm:columns-3 lg:columns-4 px-2 md:px-20 md:px-20 pt-5 ">
+    <section className="columns-1 sm:columns-3 lg:columns-4 px-2 md:px-20 pt-5 ">
       
       {imagesWithBlur.map((img) => (
         <div key={img.src} className="relative mb-5 w-full group">
@@ -26,6 +26,6 @@ const imagesWithBlur = await addBlurredImgUrls(imgFiles.map(img => ({ src: img }
           />
         </div>
       ))}
-    </div>
+    </section>
   );
 }

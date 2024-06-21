@@ -34,6 +34,25 @@ I began researching and found that Next.js, a framework based on React.js, offer
 - Gained knowledge and experience with **Next.js**, **TypeScript**, and **Tailwind.**
 - Used **Git branch** for developing the syntax highlight feature and then merged it back into the main branch, which was particularly convenient.
 
-###
+### New Feature
 - new gallry page build 
-- shadcn, viewport,  Masonry 
+- shadcn, viewport,  Masonry,  plaiceholder
+
+https://plaiceholder.co/docs/usage
+
+### Q&A
+Q: Shadcn Dropdown menu doesn't close after click ?
+A: Add `asChild` in `item`, `trigger`
+```tsx
+<DropdownMenuTrigger asChild>
+          <HamburgerMenuIcon className="h-7 w-7" />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+            <DropdownMenuItem asChild>
+              <Link href="/" id="test" className="text-xl hover:text-pink-600">
+                Blog
+              </Link>
+            </DropdownMenuItem>
+```
+Q:CSS
+A:

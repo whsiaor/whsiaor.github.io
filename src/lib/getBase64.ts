@@ -12,7 +12,6 @@ async function getBase64(imgURL: string) {
 
     const { base64 } = await getPlaiceholder(file);
 
-    console.log(base64);
     return base64;
   } catch (err) {
     err;
