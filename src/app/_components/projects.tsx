@@ -12,6 +12,15 @@ export default function Projects() {
             desc="A web-based application designed for storing and sharing information files. Simply open the webpage and log in, and you'll have a space to store and access your information or file across different devices and operating systems."
           />
         </a>
+        <a href="https://github.com/whsiaor/whsiaor.github.io">
+          <ProjectCard
+            alt="My Blog"
+            src="/portfolio/blog.png"
+            title="My Blog"
+            desc="
+This blog was created using a Next.js template and deployed to GitHub Pages using GitHub Actions."
+          />
+        </a>
         <a href="https://github.com/whsiaor/Seek_Spider">
           <ProjectCard
             alt="Seek_Spider"

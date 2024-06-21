@@ -22,10 +22,12 @@ I began researching and found that Next.js, a framework based on React.js, offer
 - The original template included a component for converting Markdown to HTML, but the parsed tags were basic HTML tags. I wanted a better visual experience, so I used `Rehype Prism` to add specific syntax tokens to the output tags. Combined with `prism.css`, this made the code look nicer and easier to read.
 - To output a static site, I avoided using client-side features and modified `next.config.js` to output in the desired mode.
 - For deploying my blog on GitHub Pages, I wrote a CI/CD process using GitHub Actions. GitHub Actions supports Next.js and offers basic templates that require minimal changes. Now, my deployment process is simple—just git push after making changes and additions. I also check for errors during deployment.
+- Using [Shadcn](https://ui.shadcn.com/), I created dropdown menus and buttons, which greatly improved development efficiency.
+- On the gallery page, due to the static server's inability to render the `placeholder="blur"` feature of the Image tag, I employed [plaiceholder](https://plaiceholder.co/docs/usage) to write a function that pre-generates blurred images as a replacement. This tool is stored in the lib directory under the name getBase64.
+
 
 ## Future Improvements
 
-- Add portfolio and gallery pages to showcase my graphic design work and code projects.
 - Explore MDX, which looks interesting. Although I don't need it now, I might switch to using MDX in the future.
 - As the number of blog posts increases, add a search feature.
 
@@ -33,16 +35,13 @@ I began researching and found that Next.js, a framework based on React.js, offer
 
 - Gained knowledge and experience with **Next.js**, **TypeScript**, and **Tailwind.**
 - Used **Git branch** for developing the syntax highlight feature and then merged it back into the main branch, which was particularly convenient.
+- Hosting on a static server imposes some constraints, but it also provides an opportunity to gain a better understanding of how Next.js operates.
 
-### New Feature
-- new gallry page build 
-- shadcn, viewport,  Masonry,  plaiceholder
 
-https://plaiceholder.co/docs/usage
-
-### Q&A
+## Q&A
 Q: Shadcn Dropdown menu doesn't close after click ?
-A: Add `asChild` in `item`, `trigger`
+
+A: Add `asChild` in `item` and `trigger`
 ```tsx
 <DropdownMenuTrigger asChild>
           <HamburgerMenuIcon className="h-7 w-7" />
@@ -54,5 +53,17 @@ A: Add `asChild` in `item`, `trigger`
               </Link>
             </DropdownMenuItem>
 ```
-Q:CSS
-A:
+Q: How to generate viewport in Next.js :
+
+A: In `layout.tsx`, add
+```tsx
+import type { Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: false,
+};
+```

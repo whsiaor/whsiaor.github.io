@@ -1,7 +1,6 @@
 import addBlurredImgUrls from '@/lib/getBase64'
 
 import Image from "next/image";
-import { rgbDataURL } from '@/lib/tools'
 import {getImgNames} from '@/lib/api'
 
 export default async function ImgCards() {
@@ -21,7 +20,7 @@ const imagesWithBlur = await addBlurredImgUrls(imgFiles.map(img => ({ src: img }
             height={0}
             placeholder="blur"
             blurDataURL={img.base64}
-            className="rounded-xl  group-hover:opacity-75 shadow group-hover:shadow-lg"
+            className="rounded-xl group-hover:opacity-75 shadow group-hover:shadow-lg"
             unoptimized
           />
         </div>
