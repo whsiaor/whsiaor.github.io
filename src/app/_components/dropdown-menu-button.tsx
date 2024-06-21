@@ -15,17 +15,17 @@ export function DropdownMenuButton() {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
             <DropdownMenuItem asChild>
-              <Link href="/" id="test" className="text-xl hover:text-pink-600">
+              <Link href="/" id="test" className="text-xl hover:text-pink-600 active:italic">
                 Blog
               </Link>
             </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/portfolio" className="text-xl hover:text-sky-500">
+            <Link href="/portfolio" className="text-xl hover:text-sky-500 active:italic">
               Portfolio
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/gallery" className="text-xl hover:text-lime-400">
+            <Link href="/gallery" className="text-xl hover:text-lime-400 active:italic">
               Gallery
             </Link>
           </DropdownMenuItem>

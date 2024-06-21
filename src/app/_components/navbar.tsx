@@ -13,17 +13,17 @@ export default function Navbar() {
       <div className="hidden sm:block">
         <ul>
           <li>
-            <Link href="/" className="hover:text-pink-600">
+            <Link href="/" className="hover:text-pink-600 active:italic">
               Blog
             </Link>
           </li>
           <li>
-            <Link href="/portfolio" className="hover:text-sky-500">
+            <Link href="/portfolio" className="hover:text-sky-500 active:italic">
               Portfolio
             </Link>
           </li>
           <li>
-            <Link href="/gallery" className="hover:text-lime-400">
+            <Link href="/gallery" className="hover:text-lime-400 active:italic">
               Gallery
             </Link>
           </li>
