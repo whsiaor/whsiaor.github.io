@@ -2,9 +2,6 @@
   @apply leading-relaxed font-sans font-light;
 }
 
-.markdown p {
-  @apply leading-7 [&:not(:first-child)]:mt-6;
-}
 
 .markdown ol {
   @apply my-6 tracking-wide text-lg;
@@ -16,14 +13,18 @@
   @apply scroll-m-20 border-b pb-2 mt-20 text-3xl font-semibold tracking-tight first:mt-0;
 }
 .markdown h3 {
-  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight mt-10;
 }
 .markdown h4 {
   @apply scroll-m-20 text-xl font-semibold tracking-tight;
 }
 .markdown strong {
-  @apply font-extrabold;
+  @apply font-extrabold text-lg;
 }
+.markdown p {
+  @apply leading-7 text-lg [&:not(:first-child)]:mt-6;
+}
+
 /* 
 .markdown code{
   @apply  p-2 
@@ -32,18 +33,21 @@
 .markdown pre code {
   @apply p-1 block overflow-y-scroll;
 } */
+.markdown ol {
+  @apply my-6 ml-6 text-lg [&>li]:mt-2 list-decimal font-extrabold;
+}
 .markdown ul {
-  @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  @apply my-6 ml-6 text-lg  [&>li]:mt-2 list-disc;
 }
-.markdown li {
-  @apply list-disc;
-}
+/* .markdown li {
+  @apply list-disc ;
+} */
 .markdown a {
-  @apply text-orange-500;
+  @apply text-pink-600;
 }
 .markdown a:hover {
-  @apply text-orange-500 underline font-bold;
+  @apply text-pink-600 underline font-bold;
 }
 .markdown blockquote {
-  @apply mt-6 border-l-2 pl-6 italic;
+  @apply mt-6 border-l-4 border-pink-600 pl-6 italic;
 }

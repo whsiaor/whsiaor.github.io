@@ -9,7 +9,7 @@ date: "2024-06-25"
 
 [Django Basic Setup](https://whsiaor.github.io/posts/Django_StaticAssets)
 
-8. **Create `forms.py`:**
+1. ### Create `forms.py`:
 ```python
 from django import forms
 
@@ -22,13 +22,17 @@ class ContactForm(forms.Form):
         print(f"Sending email from {self.cleaned_data['email']} with message: {self.cleaned_data['message']}")
 ```
 
-**What is `cleaned_data`?**
+>**What is `cleaned_data`?**
+>
+>- **Form Submission:** When a user submits a form, Django saves the raw input data in the `self.data` dictionary.
+>- **Data Validation:** Django validates the data in `self.data` to ensure it meets the rules you’ve defined (e.g., correct email format, proper phone number format, or input length requirements).
+>- **Data Cleaning:** If the validation is successful, Django stores the validated data in `self.cleaned_data`. This dictionary contains only the cleaned and validated data, making it safe to use for processing or storage.
 
-- **Form Submission:** When a user submits a form, Django saves the raw input data in the `self.data` dictionary.
-- **Data Validation:** Django validates the data in `self.data` to ensure it meets the rules you’ve defined (e.g., correct email format, proper phone number format, or input length requirements).
-- **Data Cleaning:** If the validation is successful, Django stores the validated data in `self.cleaned_data`. This dictionary contains only the cleaned and validated data, making it safe to use for processing or storage.
 
-9. **In `views.py` inside `form_app`, create 3 views to handle different situations:**
+
+2. ### In `views.py`
+
+inside `form_app`, create 3 views to handle different situations:
 ```python
 from django.shortcuts import render, redirect
 from .forms import ContactForm
@@ -53,7 +57,7 @@ def contact_success_view(request):
     return render(request, 'form_app/contact-success.html')
 ```
 
-11. **Create `urls.py` in `form_app`:**
+3. ### Create `urls.py` in `form_app`:
 ```python
 from django.urls import path
 from . import views
@@ -65,10 +69,10 @@ urlpatterns = [
 ]
 ```
 
-12. **Static folders:**
-Create folders for static assets (images, styles, js). In `settings.py`, add `STATICFILES_DIRS` similar to how it was done in [DjangoStaticAssets](https://whsiaor.github.io/posts/Django_StaticAssects).
+4. ### Static folders:
+ Create folders for static assets (images, styles, js). In `settings.py`, add `STATICFILES_DIRS` similar to how it was done in [DjangoStaticAssets](https://whsiaor.github.io/posts/Django_StaticAssects).
 
-13. **Create templates:**
+5. ### Create templates:
 
 ```html
 <!-- home.html -->
@@ -79,12 +83,14 @@ Create folders for static assets (images, styles, js). In `settings.py`, add `ST
 ...
 ```
 
-`action="{% url 'contact' %}"`: This is Django template syntax for URL reverse resolution to dynamically generate a URL.
+>`action="{% url 'contact' %}"`: <br>
+>This is Django template syntax for URL reverse resolution to dynamically generate a URL.
 
-`{% url 'contact' %}` fetches the URL pattern named 'contact'.
+>`{% url 'contact' %}` :<br>
+>fetches the URL pattern named 'contact'.
 Django replaces 'contact' with the corresponding URL path based on your URL configuration.
 
-14. **Create contact.html:**
+### 6. Create contact.html:
 
 ```html
 <!-- contact.html -->
@@ -95,33 +101,32 @@ Django replaces 'contact' with the corresponding URL path based on your URL conf
 </form>
 ```
 
-**`{% csrf_token %}`**
+>**`{% csrf_token %}`**
+>
+>- **Purpose:** To prevent Cross-Site Request Forgery (CSRF) attacks.
+>- **Mechanism:** Django generates a random CSRF token for each form and hides it within the form. When the user submits the form, Django checks if the submitted token matches the server-generated token. If they match, the request is considered legitimate; otherwise, the request is denied.
 
-- **Purpose:** To prevent Cross-Site Request Forgery (CSRF) attacks.
-- **Mechanism:** Django generates a random CSRF token for each form and hides it within the form. When the user submits the form, Django checks if the submitted token matches the server-generated token. If they match, the request is considered legitimate; otherwise, the request is denied.
-
-**`{{ form.as_p }}`**
-
-- **Purpose:** To render a Django form in a web page.
-- **Mechanism:** `form.as_p` is a method of the Django form object that wraps each field in `<p>` tags and automatically generates the corresponding input fields, labels, and error messages.
+>**`{{ form.as_p }}`**
+>
+>- **Purpose:** To render a Django form in a web page.
+>- **Mechanism:** `form.as_p` is a method of the Django form object that wraps each field in `<p>` tags and automatically generates the corresponding input fields, labels, and error messages.
 
 ## Q&A
 
-**Q: After setting CSS, why is nothing changing?**
+ ### Q: After setting CSS, why is nothing changing?
 
-A: Try clearing the cache by pressing `Command + Shift + R`.
+A: Try clearing the cache by pressing `Command + Shift + R`
 
-**Q: If it can’t find the templates?**
+
+### Q: If it can’t find the templates?
 
 A: In `settings.py`, add the following to the `TEMPLATES` configuration:
-
 ```python
 'DIRS': [
     os.path.join(BASE_DIR, 'form_app', 'templates'),
 ],
 ```
-
-### Final Folder Structure
+#### Final Folder Structure
 ```shell
 form_app/
 ├── static/

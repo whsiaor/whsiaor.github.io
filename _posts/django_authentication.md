@@ -30,18 +30,19 @@ class RegisterForm(forms.ModelForm):
         return cleaned_data
 ```
 
-**The `Meta` class** in Django Forms is a built-in class that allows you to customize the behavior and appearance of the form, such as:
-- **`model`:** Specifies the Django model associated with the form. Here, you specify the `User` model, meaning the `RegisterForm` is used to create or update `User` objects.
-- **`fields`:** Specifies which model fields should be included in the form. Here, you listed `username`, `password`, and `password_confirm`, which will be included in the form.
+ **The `Meta` class** in Django Forms is a built-in class that allows you to customize the behavior and appearance of the form, such as:
+ >- **`model`:** Specifies the Django model associated with the form. Here, you specify the `User` model, meaning the `RegisterForm` is used to create or update `User` objects.
+ >- **`fields`:** Specifies which model fields should be included in the form. Here, you listed `username`, `password`, and `password_confirm`, which will be included in the form.
 
-**The `clean()` method:**
-- Retrieves and cleans the submitted form data.
-- Performs additional custom validation to ensure the data meets specific requirements.
-- Returns the validated data for further processing.
+ **The `clean()` method:**
+ >- Retrieves and cleans the submitted form data.
+ >- Performs additional custom validation to ensure the data meets specific requirements.
+ >- Returns the validated data for further processing.
 
 Using the `clean()` method, you can perform more granular validation on the form data, ensuring the user input meets the expected criteria and enhancing the robustness of your application.
 
 2. **In `views.py`**:
+
 Import necessary libraries:
 ```python
 from django.shortcuts import render, redirect
@@ -85,8 +86,8 @@ def register_view(request):
         form = RegisterForm()
     return render(request, 'accounts/register.html', {'form': form})
 ```
-- **`render` for displaying pages:** The `render` function renders a template into an HTML page and returns it to the browser. User forms need to be displayed on the page for the user to fill out, so you use `render` to render the form template.
-- **`redirect` for navigation:** The `redirect` function redirects the user to another URL. After form submission, if the data is processed successfully (e.g., user registration is successful), you can use `redirect` to send the user to another page, like the home page or a success message page.
+ >- **`render` for displaying pages:** The `render` function renders a template into an HTML page and returns it to the browser. User forms need to be displayed on the page for the user to fill out, so you use `render` to render the form template.
+ >- **`redirect` for navigation:** The `redirect` function redirects the user to another URL. After form submission, if the data is processed successfully (e.g., user registration is successful), you can use `redirect` to send the user to another page, like the home page or a success message page.
 
 In the `login_view` function:
 ```python
@@ -104,10 +105,10 @@ def login_view(request):
             error_message = "Invalid credentials!"
     return render(request, 'accounts/login.html', {'error': error_message})
 ```
-**Implementing the `next` parameter:**
-
-1. **On the login-required pages, add a hidden field and set the `next` parameter to the current page URL.**
-2. **After successful login, retrieve the `next` parameter from the request and redirect to that page.**
+>Implementing the `next` parameter:
+>
+>1. On the login-required pages, add a hidden field and set the `next` parameter to the current page URL.
+>2. After successful login, retrieve the `next` parameter from the request and redirect to that page.
 
 In the `logout_view` function:
 ```python
