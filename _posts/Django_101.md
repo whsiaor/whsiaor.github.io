@@ -4,6 +4,24 @@ excerpt: "How to start Django"
 date: "2024-06-24"
 ---
 
+## How Django Works?
+![Django](/posts/Django/django-tutorial.png)
+**Django MVT**
+
+MVC is a software design pattern that has three components namely Model (back-end), View (front-end) and Controller. Django uses a modified version of MVC called MVT where:
+
+- Model is the data storage layer
+
+- Template is the data presentation layer
+
+- View is the logical layer that interacts with Model to fetch and render data to Template.
+
+## Request and response cycle in Django
+![Django1](/posts/Django/download.png)
+A request starts when the user submits a URL in the web browser. The request is forwarded by middlewares to match a urlpattern. These urls path map to view functions or return error. A view function may take the request further to models to access data or directly render response to a template page.
+
+>[Reference](https://www.programink.com/django-tutorial/django-urls-views.html)
+
 ## Installation
 
 1. Create a virtual environment:
@@ -161,3 +179,4 @@ You can manage the database without using the shell.
     ```
 
 3. Access the admin dashboard at `/admin`.
+
